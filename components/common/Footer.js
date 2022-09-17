@@ -10,8 +10,8 @@ import {
 } from "native-base";
 import { MaterialCommunityIcons, MaterialIcons } from "@expo/vector-icons";
 import { StyleSheet } from "react-native";
-import { useNavigation } from '@react-navigation/native';
-import { COLORS, FONTS, SIZES, icons, images } from '../../constants';
+import { useNavigation } from "@react-navigation/native";
+import { COLORS, FONTS, SIZES, icons, images } from "../../constants";
 
 function Footer() {
   // const dashboard = () => {
@@ -26,9 +26,9 @@ function Footer() {
         safeAreaTop
         width="100%"
         alignSelf="center"
-        style={(styles.footer)}
+        style={styles.footer}
       >
-        <HStack style={(styles.col)} alignItems="center" safeAreaBottom>
+        <HStack style={styles.col} alignItems="center" safeAreaBottom>
           <Pressable
             // cursor="pointer"
             opacity={selected === 0 ? 1 : 0.5}
@@ -36,8 +36,8 @@ function Footer() {
             flex={1}
             onPressIn={() => setSelected(0)}
             onPress={() => {
-          navigation.navigate("Home");
-        }}
+              navigation.navigate("Home");
+            }}
           >
             <Center>
               <Icon
@@ -60,7 +60,10 @@ function Footer() {
             opacity={selected === 1 ? 1 : 0.5}
             py="2"
             flex={1}
-            onPress={() => setSelected(1)}
+            onPressIn={() => setSelected(1)}
+            onPress={() => {
+              navigation.navigate("Discussion");
+            }}
           >
             <Center>
               <Icon
